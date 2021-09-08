@@ -12,6 +12,8 @@ if(isset($_POST['logout'])){
 
 ?>
 
+<div id="overlay"></div>
+
 <nav class="navbar navbar-expand-lg navbar-dark" id="nav-color">
   <div class="container-fluid">
     <a href="index.php">
@@ -54,30 +56,30 @@ if(isset($_POST['logout'])){
         
       </ul>
       <br>
-      <!-- <div id="google_translate_element" class="lang_trans"></div> -->
-      <!-- <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      </form> -->
-      <!-- <button class="btn btn-outline-success" type="2">Login</button> -->
     </div>
   </div>
 </nav>
 
 <?php
-// echo $_SESSION['login'];
+// echo $_SESSION['admin'];
 error_reporting(E_ALL ^ E_WARNING);
-    if($_SESSION['login']=="true" && $_SESSION['admin'] = "true"){
+    if($_SESSION['login']=="true" && $_SESSION['admin'] == "true"){
       echo "<script>
       document.getElementById('search').classList.replace('show','hidee');
       document.getElementById('add').classList.replace('hidee','show');
+      document.getElementById('login').classList.replace('show','hidee');
+      document.getElementById('logout').classList.replace('hidee','show');
+      document.getElementById('get').classList.replace('hidee','show');
       </script>";
   }
 
-    if($_SESSION['login']=="true"){
+    else if($_SESSION['login']=="true" && $_SESSION['admin'] == "false"){
     echo "<script>
     document.getElementById('login').classList.replace('show','hidee');
     document.getElementById('logout').classList.replace('hidee','show');
     document.getElementById('get').classList.replace('hidee','show');
+    document.getElementById('search').classList.replace('hidee','show');
+      document.getElementById('add').classList.replace('show','hidee');
     </script>";
   }
   else{

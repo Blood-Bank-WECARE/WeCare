@@ -17,6 +17,7 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
+<div id="overlay"></div>
 <header> 
     <?php
     include "navbar.php";
@@ -135,14 +136,21 @@
 
 
     <script>
-function myFunction() {
-  var x = document.getElementById("popup_frm_div");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
+        function myFunction() {
+        var x = document.getElementById("popup_frm_div");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+            var y = document.getElementById("overlay");
+            if (y.style.display === "block") {
+                y.style.display = "none";
+            } else {
+                y.style.display = "block";
+            }
+
+        }
 </script>
 </body>
 </html>

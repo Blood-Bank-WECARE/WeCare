@@ -18,7 +18,7 @@ session_start();
 // echo $_SESSION['login'];
     include 'config.php';
     $_SESSION['login'] = "false";
-    // $_SESSION['admin'] = "false";
+    $_SESSION['admin'] = "false";
     if(isset($_POST['submit'])){
         $email=$_POST['email'];
         $password=$_POST['pass'];
@@ -27,30 +27,33 @@ session_start();
             $_SESSION['login'] = "true";
             echo $_SESSION['admin'];
             echo "<script>
-            alert('logged in');
+            alert('logged in as admin');
             window.location='index.php';
             </script>";
         }
         else{
-        $s =" select * from user where email = '$email' && pwd = '$password'";
+            $s =" select * from user where email = '$email' && pwd = '$password'";
 
-        $result=mysqli_query($conn,$s);
-        $num = mysqli_num_rows($result);
-        if($num == 1){
-            $_SESSION['login'] = "true";
-            echo "<script>
-            window.location='index.php';
-            console.log('heyy')
-            console.log(document.getElementById('login').innerText);
+            $result=mysqli_query($conn,$s);
+            $num = mysqli_num_rows($result);
+            if($num == 1){
+                $_SESSION['admin'] = "false";
+                $_SESSION['login'] = "true";
+                echo "<script>
+                alert('logged in as user');
+                window.location='index.php';
+                console.log('heyy')
+                console.log(document.getElementById('login').innerText);
 
-            // Welcome(num);
-            </script>";
-        }
-        else{
-            $_SESSION['login'] = "false";
-            echo "<script> alert('Try again!');
-            </script>";
-        }
+                // Welcome(num);
+                </script>";
+            }
+            else{
+                $_SESSION['admin'] = "false";
+                $_SESSION['login'] = "false";
+                echo "<script> alert('Try again!');
+                </script>";
+            }
     }
 }
 ?>
