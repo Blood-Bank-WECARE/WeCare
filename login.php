@@ -74,7 +74,7 @@ session_start();
                     <input id="email" type="text" placeholder="Email" name="email" required> <br>
                     <input id="pass" type="password" placeholder="Password" name="pass" required> <br>
                     
-                <a href="index.php?id"> <button id="submit" name="submit" onclick="ValidateEmail(document.form1.email); ValidatePass(document.form1.pass)">Submit</button> </a>
+                <a href="index.php?id"> <button id="submit" name="submit" onclick="ValidateEmail(document.form1.email); ValidatePass(document.form1.pass)">Login</button> </a>
                 
                 </form>
                 <a href="index.php?id"> <button id="back" name="submit">Back</button> </a>

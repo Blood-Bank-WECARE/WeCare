@@ -72,6 +72,8 @@ input , select{
     margin-bottom: 1.5rem;
     width: 20rem;
     font-size: 1.5rem;
+    border: 2px solid black;
+    border-radius: 5px;
     
 }
 .buttonn{
@@ -118,6 +120,32 @@ input , select{
     background-color: white;
     color: #f31c1c;
     font-weight: bold;
+}
+
+/*------------------------------------------Add Center Locations--------------------------------*/
+.pop-up_form{
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 5%;
+    margin-top: 5rem;
+    padding-top: 3rem;
+    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+}
+
+.add-button{
+    background-color: white;
+    margin: auto;
+    text-align: center;
+}
+
+.add-buttonn{
+    width: 15rem;
+    font-size: 1.5rem;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 /* ---------------------------------------------ABOUT_US------------------------------------------- */

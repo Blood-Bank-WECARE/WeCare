@@ -129,7 +129,7 @@ include "navbar.php";
                     <a href="login.php">
                     <input class="buttonn" type="button" value="Back">
                     </a>
-                    <button class="buttonn" name="submit" type="submit" value="submit" onclick="ValidateEmail(document.form1.email); ValidatePass(document.form1.pass); Checkpass()">Submit</button>
+                    <button class="buttonn" name="submit" type="submit" value="submit" onclick="ValidateEmail(document.form1.email); ValidatePass(document.form1.pass); Checkpass()">SignUp</button>
 
                     <!-- <input class="buttonn" type="submit" name="submit" value="Save">  -->
                     <input class="buttonn" type="reset" value="Reset">
