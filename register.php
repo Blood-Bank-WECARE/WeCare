@@ -43,11 +43,11 @@ include "navbar.php";
     if($password==$con_password && strlen($password)>8){
     $mysql="INSERT INTO user (name,email,pwd) values('{$name}','{$email}','{$password}')";
     $result=mysqli_query($conn,$mysql);
-    echo $result;
+    // echo $result;
 
     $sql="INSERT INTO details (name, gender, blood_grp, aadhaar_no, date, contact_no, email, state, district, city) values('{$name}','{$gender}','{$blood_grp}','{$aadhaar}','{$dob}','{$contact}','{$email}','{$state}','{$district}','{$city}')";
     $result1=mysqli_query($conn,$sql);
-    echo $result1;
+    // echo $result1;
     
     if($result1 && $result){
         echo "<script> alert('User created and details saved successfully!');

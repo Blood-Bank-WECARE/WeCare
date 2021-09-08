@@ -124,19 +124,38 @@ input , select{
 
 /*------------------------------------------Add Center Locations--------------------------------*/
 .pop-up_form{
-    width: 50%;
-    padding-left: 5%;
+    /* position: relative; */
+    top: 0;
+    width: 75%;
+    padding-left: 0%;
     padding-right: 5%;
-    margin-left: 5%;
-    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
     padding-top: 3rem;
     margin-bottom: 5rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
+    background-color: aqua;
+}
+
+#popup_frm_div{
+    position: absolute;
+    top: 6rem;
+    width: 100%;
+    display: none;
+}
+.inpt_frm{
+    width: 15rem;
+}
+
+.add_tag{
+    padding-left: 7rem;
 }
 
 .add-button{
-    background-color: white;
-    margin: auto;
+    /* background-color: white; */
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 
@@ -170,3 +189,6 @@ input , select{
 .flex_cont{
 display: flex;
 } */
+
+
+

@@ -20,7 +20,35 @@
 <header> 
     <?php
     include "navbar.php";
+    include 'config.php';
     ?>    
+    <?php
+// session_start();
+    
+    if(isset($_POST['submit'])){
+    $center_id=$_POST['center_id'];
+    $name=$_POST['name'];
+    $type=$_POST['type'];
+    $address=$_POST['address'];
+    $city=$_POST['city'];
+    $state=$_POST['state'];
+    $pincode=$_POST['pincode'];
+    $contact=$_POST['contact'];
+    $timing=$_POST['timing'];
+    
+    
+
+    $sql="INSERT INTO centers (Center_Id, Name_, Type, Address, City, State, Pincode, Contact No., Timings) values('{$center_id}','{$name}','{$type}','{$address}','{$city}','{$state}','{$pincode}','{$contact}','{$timing}')";
+    $result=mysqli_query($conn,$sql);
+  
+    
+    
+
+    }
+
+    
+    ?>
+
     </header>
     <header>
     <div id="google_translate_element" class="lang_trans"></div>
@@ -45,8 +73,6 @@
         </div>
             
         <?php
-
-            include 'config.php';
 
             $sql ="select * from centers";
 
@@ -75,35 +101,48 @@
     </table>
     <div class="add-button">
     <a href="">
-                <button class="add-buttonn">+ Add Center Details</button>
+                <button class="add-buttonn" onfocus="myFunction()">+ Add Center Details</button>
             </a>
     </div>
 
-    <div>
-        <form action="" class="pop-up_form">
-            <p class="tag">Center ID:</p>
-            <input type="text" placeholder="Center ID"> <br>
-            <p class="tag">Name:</p>
-            <input type="text" placeholder="Name"> <br>
-            <p class="tag">Type:</p>
-            <input type="text" placeholder="Type"> <br>
-            <p class="tag">Address:</p>
-            <input type="text" placeholder="Address">  <br>
-            <p class="tag">City:</p>
-            <input type="text" placeholder="City "> <br>
-            <p class="tag">State:</p>
-            <input type="text" placeholder="State "> <br>
-            <p class="tag">Pincode:</p>
-            <input type="text" placeholder="Pincode "> <br>
-            <p class="tag">Contact No. :</p>
-            <input type="text" placeholder="Contact No. "> <br>
-            <p class="tag">Timings:</p>
-            <input type="text" placeholder="Timings "> <br>
-
-            <button class="buttonn">Add</button> 
-            <button class="buttonn">Close</button>
+    <div id="popup_frm_div">
+        <form action="add_centers.php" class="pop-up_form" method="post" name="form1">
+            <p class="tag add_tag">Center ID:</p>
+            <input name="center_id" type="text" placeholder="Center ID" class="inpt_frm">
+            <p class="tag add_tag">Name:</p>
+            <input name="name" type="text" placeholder="Name" class="inpt_frm"> <br>
+            <p class="tag add_tag">Type:</p>
+            <input name="type" type="text" placeholder="Type" class="inpt_frm"> 
+            <p class="tag add_tag">Address:</p>
+            <input name="address" type="text" placeholder="Address" class="inpt_frm">  <br>
+            <p class="tag add_tag">City:</p>
+            <input name="city" type="text" placeholder="City " class="inpt_frm">
+            <p class="tag add_tag">State:</p>
+            <input name="state" type="text" placeholder="State " class="inpt_frm"> <br>
+            <p class="tag add_tag">Pincode:</p>
+            <input name="pincode" type="text" placeholder="Pincode " class="inpt_frm"> 
+            <p class="tag add_tag">Contact No. :</p>
+            <input name="contact" type="text" placeholder="Contact No. " class="inpt_frm"> <br>
+            <p class="tag add_tag">Timings:</p>
+            <input name="timing" type="text" placeholder="Timings " class="inpt_frm"> <br><br>
+            <div class="add-button">
+                <button class="buttonn">Add</button> 
+                <button class="buttonn" onfocus="myFunction()">Close</button>
+            </div>
         </form>
     </div>
 
+
+
+    <script>
+function myFunction() {
+  var x = document.getElementById("popup_frm_div");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
 </body>
 </html>
