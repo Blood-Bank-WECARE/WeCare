@@ -27,6 +27,7 @@
 // session_start();
     
     if(isset($_POST['submit'])){
+    
     $center_id=$_POST['center_id'];
     $name=$_POST['name'];
     $type=$_POST['type'];
@@ -36,13 +37,19 @@
     $pincode=$_POST['pincode'];
     $contact=$_POST['contact'];
     $timing=$_POST['timing'];
+    echo "<script>
+    alert(`$name`);
+    </script>";
     
     
 
-    $sql="INSERT INTO centers (Center_Id, Name_, Type, Address, City, State, Pincode, Contact No., Timings) values('{$center_id}','{$name}','{$type}','{$address}','{$city}','{$state}','{$pincode}','{$contact}','{$timing}')";
+    $sql="INSERT INTO centers values('{$center_id}','{$name}','{$address}','{$city}','{$state}','{$pincode}','{$type}','{$contact}','{$timing}')";
     $result=mysqli_query($conn,$sql);
   
-    
+	if(!$result)
+	{
+		echo "Error : ".$sql."<br>".mysqli_error($conn);
+	}
     
 
     }
@@ -56,7 +63,7 @@
 
     </header>
     <div>
-    <table class="table table-hover table-striped table-condensed table-bordered" style="border-color:black;">
+    <table class="table_ table-hover" style="border-color:black;">
         <thead >
             <tr>
                 <th class="text-center">Center_Id</th>
@@ -93,6 +100,7 @@
             <td class="py-2" ><?php echo $rows['Pincode']; ?></td>
             <td class="py-2" ><?php echo $rows['Contact No.']; ?> </td>
             <td class="py-2" ><?php echo $rows['Timings']; ?> </td>
+            </tr>
                 
         <?php
             }
@@ -127,7 +135,7 @@
             <p class="tag add_tag">Timings:</p>
             <input name="timing" type="text" placeholder="Timings " class="inpt_frm"> <br><br>
             <div class="add-button">
-                <button class="buttonn">Add</button> 
+                <button type="submit" name="submit" class="buttonn">Add</button> 
                 <button class="buttonn" onfocus="myFunction()">Close</button>
             </div>
         </form>
@@ -151,6 +159,13 @@
             }
 
         }
+
+        
 </script>
+<script>
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+            }
+        </script> 
 </body>
 </html>

@@ -220,4 +220,22 @@ input , select{
 
 
 
+/*----------------------------------------------TABLE----------------------------------------*/
+
+.table_{
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border: 2px solid black;
+    border-spacing: 0;
+}
+
+td , th{
+    /* border: 2px solid black !important; */
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+
 
