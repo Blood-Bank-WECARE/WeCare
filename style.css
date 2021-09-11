@@ -82,7 +82,7 @@ input , select{
     border-radius: 5px;
     
 }
-.buttonn{
+.log-buttonn{
     width: 8rem;
     margin-right: 2rem;
     border-radius: 5px;
@@ -95,7 +95,7 @@ input , select{
     font-weight: 500;
  }
 
- .buttonn :hover{
+ .log-buttonn:hover{
      box-shadow: none;
  }
 
@@ -198,7 +198,7 @@ input , select{
 
 }
 
-.add-button :hover{
+.add-buttonn:hover{
     box-shadow: none;
 }
 

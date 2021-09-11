@@ -127,12 +127,12 @@ include "navbar.php";
                     <br>
                     <div class="burger">
                     <a href="login.php">
-                    <input class="buttonn" type="button" value="Back">
+                    <input class="log-buttonn" type="button" value="Back">
                     </a>
-                    <button class="buttonn" name="submit" type="submit" value="submit" onclick="ValidateEmail(document.form1.email); ValidatePass(document.form1.pass); Checkpass()">SignUp</button>
+                    <button class="log-buttonn" name="submit" type="submit" value="submit" onclick="ValidateEmail(document.form1.email); ValidatePass(document.form1.pass); Checkpass()">SignUp</button>
 
                     <!-- <input class="buttonn" type="submit" name="submit" value="Save">  -->
-                    <input class="buttonn" type="reset" value="Reset">
+                    <input class="log-buttonn" type="reset" value="Reset">
                     
 
                     </div>

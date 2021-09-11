@@ -46,6 +46,10 @@ input{
    
 }
 
+.buttonn:hover{
+    box-shadow: none;
+}
+
 p{
     font-size: 1.5rem;
 }

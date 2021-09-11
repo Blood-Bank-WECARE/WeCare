@@ -30,7 +30,7 @@ if(isset($_POST['logout'])){
           <a class="nav-link hidee" href="receiver.php" id="get">GET BLOOD</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link show" href="#" id="search">DONATION CENTER LOCATIONS</a>
+          <a class="nav-link show" href="donor_centers.php" id="search">DONATION CENTER LOCATIONS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link hidee" href="add_centers.php" id="add">ADD CENTER LOCATIONS</a>
