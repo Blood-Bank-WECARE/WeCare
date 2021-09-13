@@ -62,6 +62,23 @@
     <div id="google_translate_element" class="lang_trans"></div>
 
     </header>
+    <?php
+// session_start();
+    include 'config.php';
+
+    if(isset($_POST['search'])){
+    $pincode=$_POST['pincode'];
+
+    
+}
+    
+    ?>
+    <div class="pincode">
+    <form action="donor_centers.php" method="post">
+        <input name="pincode" type="number" placeholder="Pincode">
+        <button class="log-buttonn" type="submit" name="search">Search</button>
+    </form>
+    </div>
     <div>
     <table class="table_ table-hover" style="border-color:black;">
         <thead >
@@ -81,13 +98,17 @@
         </div>
             
         <?php
-
+        if(isset($_POST['search'])){
+            $sql ="select * from centers where Pincode = $pincode";
+        }
+        else{
             $sql ="select * from centers";
-
+        }
             $query =mysqli_query($conn, $sql);
 
             while($rows = mysqli_fetch_assoc($query))
             {
+        
         ?>
 
             <tr>

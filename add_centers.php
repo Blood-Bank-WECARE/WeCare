@@ -135,8 +135,8 @@
             <p class="tag add_tag">Timings:</p>
             <input name="timing" type="text" placeholder="Timings " class="inpt_frm"> <br><br>
             <div class="add-button">
-                <button type="submit" name="submit" class="buttonn">Add</button> 
-                <button class="buttonn" onfocus="myFunction()">Close</button>
+                <button type="submit" name="submit" class="log-buttonn">Add</button> 
+                <button class="log-buttonn" onfocus="myFunction()">Close</button>
             </div>
         </form>
     </div>
