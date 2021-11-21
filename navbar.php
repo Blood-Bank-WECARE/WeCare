@@ -2,13 +2,18 @@
 
 <?php
 session_start();
-
+include 'config.php';
 
 if(isset($_POST['logout'])){
   $_SESSION['login'] = "false";
   echo "<script> alert('Logged out!');
         </script>";
 }
+
+$user_ = $_SESSION['email'];
+$sql = "SELECT * FROM user where email='$user_'";
+$res = mysqli_query($conn,$sql);
+$user_details = mysqli_fetch_array($res);
 
 ?>
 
@@ -46,10 +51,26 @@ if(isset($_POST['logout'])){
         </li>
         <li class="nav-item">
           <!-- <a class="nav-link hidee" href="login.php" id="logout">LOGOUT</a> -->
-          <form action="index.php" method="post">
+          <!-- <form action="index.php" method="post"> -->
             <!-- <input type="submit" class="nav-link hidee" id="logout" name="logout" value="LOGOUT"> -->
-          <button  class="nav-link hidee" id="logout" name="logout">LOGOUT</button>
+          <!-- <button  class="nav-link hidee" id="logout" name="logout">LOGOUT</button> -->
+          <!-- </form> -->
+          <li class="nav-item dropdown hidee" id="logout">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <?php echo $user_details['name'] ?>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <!-- <li><hr class="dropdown-divider"></li> -->
+            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+            <form action="index.php" method="post">
+            <!-- <input type="submit" class="nav-link hidee" id="logout" name="logout" value="LOGOUT"> -->
+          <!-- <button  class="nav-link hidee" id="logout" name="logout">LOGOUT</button> -->
+          <input class="dropdown-item" type="submit" id="log-out" name="logout" value="Logout">
           </form>
+          </ul>
+        </li>
         </li>
         <br>
         <br>

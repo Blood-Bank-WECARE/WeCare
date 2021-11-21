@@ -43,6 +43,9 @@ nav{
     z-index: 0 !important;
 }
 
+#navbarDropdown{
+    text-transform: uppercase;
+}
 
 /* ----------------------------------------REGISTER-------------------------------------- */
 
@@ -115,20 +118,15 @@ input , select{
     display: block;
 }
 
-#logout{
-    width: 8rem;
-    border-radius: 5px;
-    border: 2px solid white;
+#log-out{
+    width: 6rem;
+    border: none;
     background-color: transparent;
     border-color: white;
-    color: white;
-    text-align: center;
-    justify-items: center;
-    font-weight: bold;
+    font-size:medium;
 }
 
-#logout:hover{
-    background-color: white;
+#log-out:hover{
     color: #f31c1c;
     font-weight: bold;
 }

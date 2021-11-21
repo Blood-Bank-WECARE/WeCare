@@ -23,6 +23,7 @@ session_start();
     include 'config.php';
     $_SESSION['login'] = "false";
     $_SESSION['admin'] = "false";
+    $_SESSION['email']  = 'admin@gmail.com';
     if(isset($_POST['submit'])){
         $email=$_POST['email'];
         $password=$_POST['pass'];
@@ -43,8 +44,10 @@ session_start();
             if($num == 1){
                 $_SESSION['admin'] = "false";
                 $_SESSION['login'] = "true";
+                $user_name = mysqli_fetch_array($result);
+                $_SESSION['email']  = $email;
                 echo "<script>
-                alert('logged in as user');
+                alert('logged in as $email ');
                 window.location='index.php';
                 console.log('heyy')
                 console.log(document.getElementById('login').innerText);

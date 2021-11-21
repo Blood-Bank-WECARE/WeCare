@@ -75,7 +75,7 @@
     ?>
     <div class="pincode">
     <form action="donor_centers.php" method="post">
-        <input name="pincode" type="number" placeholder="Pincode">
+        <input name="pincode" type="number" placeholder="Pincode" required>
         <button class="log-buttonn" type="submit" name="search">Search</button>
     </form>
     </div>
