@@ -3,12 +3,16 @@ body{
     top: 0px !important; 
 }
 
-
+.carousel{
+    z-index: -1 !important;
+}
 /* ------------------------------------------Nav-bar------------------------------------- */
 
 header{
     background-color: rgb(255, 80, 80);
     color: white;
+    z-index: 1;
+    position: fixed;
 }
 footer{
     background-color: rgb(255, 80, 80);
@@ -245,3 +249,5 @@ td , th{
     margin-top: 2rem;
 
 }
+
+

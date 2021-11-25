@@ -3,7 +3,7 @@
 <?php
 session_start();
 include 'config.php';
-
+error_reporting(E_ALL ^ E_WARNING);
 if(isset($_POST['logout'])){
   $_SESSION['login'] = "false";
   echo "<script> alert('Logged out!');
@@ -43,8 +43,19 @@ $user_details = mysqli_fetch_array($res);
         <li class="nav-item">
           <a class="nav-link" href="#about">ABOUT US</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">CONTACT US</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          CONTACT US
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">FAQs</a></li>
+            <li><a class="dropdown-item" href="#">Talk to us</a></li>
+            <!-- <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link show" href="login.php" id="login">LOGIN/SIGN-UP</a>
@@ -55,11 +66,11 @@ $user_details = mysqli_fetch_array($res);
             <!-- <input type="submit" class="nav-link hidee" id="logout" name="logout" value="LOGOUT"> -->
           <!-- <button  class="nav-link hidee" id="logout" name="logout">LOGOUT</button> -->
           <!-- </form> -->
-          <li class="nav-item dropdown hidee" id="logout">
+          <li class="nav-item dropdown hidee" id="logout" style="left: 0">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <?php echo $user_details['name'] ?>
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <!-- <li><hr class="dropdown-divider"></li> -->
@@ -83,7 +94,7 @@ $user_details = mysqli_fetch_array($res);
 
 <?php
 // echo $_SESSION['admin'];
-error_reporting(E_ALL ^ E_WARNING);
+
     if($_SESSION['login']=="true" && $_SESSION['admin'] == "true"){
       echo "<script>
       document.getElementById('search').classList.replace('show','hidee');
