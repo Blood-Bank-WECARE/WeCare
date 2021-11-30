@@ -52,7 +52,7 @@ $user_details = mysqli_fetch_array($res);
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">FAQs</a></li>
-            <li><a class="dropdown-item" href="#">Talk to us</a></li>
+            <li><a class="dropdown-item" href="chatbot.php">Talk to us</a></li>
             <!-- <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li> -->
           </ul>

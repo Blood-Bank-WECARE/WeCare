@@ -12,7 +12,7 @@ header{
     background-color: rgb(255, 80, 80);
     color: white;
     z-index: 1;
-    position: fixed;
+    /* position: fixed; */
 }
 footer{
     background-color: rgb(255, 80, 80);
